@@ -1,3 +1,19 @@
+<?php
+$carModels = [
+    "" => "Custom (atur harga manual)",
+    150000000 => "Daihatsu Ayla",
+    180000000 => "Toyota Agya",
+    230000000 => "Honda Brio",
+    260000000 => "Toyota Avanza",
+    300000000 => "Daihatsu Xenia",
+    350000000 => "Honda HR-V",
+    450000000 => "Toyota Innova Zenix",
+    550000000 => "Mitsubishi Pajero Sport",
+    750000000 => "Toyota Fortuner",
+];
+
+$currentYear = date("Y");
+?>
 <!doctype html>
 <html lang="id">
   <head>
@@ -62,16 +78,9 @@
                 <div class="mb-4">
                   <label for="tipeMobil" class="form-label fw-semibold">Tipe mobil</label>
                   <select class="form-select" id="tipeMobil">
-                    <option value="">Custom (atur harga manual)</option>
-                    <option value="150000000">Daihatsu Ayla</option>
-                    <option value="180000000">Toyota Agya</option>
-                    <option value="230000000">Honda Brio</option>
-                    <option value="260000000">Toyota Avanza</option>
-                    <option value="300000000">Daihatsu Xenia</option>
-                    <option value="350000000">Honda HR-V</option>
-                    <option value="450000000">Toyota Innova Zenix</option>
-                    <option value="550000000">Mitsubishi Pajero Sport</option>
-                    <option value="750000000">Toyota Fortuner</option>
+                    <?php foreach ($carModels as $price => $name): ?>
+                      <option value="<?php echo htmlspecialchars($price); ?>"><?php echo htmlspecialchars($name); ?></option>
+                    <?php endforeach; ?>
                   </select>
                 </div>
 
@@ -274,7 +283,7 @@
           <a href="#syarat" class="link-secondary text-decoration-none">Syarat</a>
           <a href="#kontak" class="link-secondary text-decoration-none">Kontak</a>
         </div>
-        <div class="small text-muted">© 2026 simulcars. Ilustrasi, bukan penawaran resmi.</div>
+        <div class="small text-muted">© <?php echo htmlspecialchars($currentYear); ?> simulcars. Ilustrasi, bukan penawaran resmi.</div>
       </div>
     </footer>
 
