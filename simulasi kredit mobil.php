@@ -1,4 +1,5 @@
 <?php
+// Daftar tipe mobil & harga (dalam Rupiah) — atur di sini kalau mau tambah/ubah tipe
 $carModels = [
     "" => "Custom (atur harga manual)",
     150000000 => "Daihatsu Ayla",
@@ -22,9 +23,9 @@ $currentYear = date("Y");
     <title>Website Kredit Mobil Tanpa Ribet</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" />
   </head>
-  <body>
+  <body style="padding-top: 76px">
     <header>
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top py-3">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top py-3">
         <div class="container">
           <a class="navbar-brand fw-bold" href="#">simulcars</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navLinks" aria-controls="navLinks" aria-expanded="false" aria-label="Buka menu">
